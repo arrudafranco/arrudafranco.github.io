@@ -128,6 +128,9 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; color: var(--nav
 .post-body .gallery img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
 .post-body .gallery-stack { grid-template-columns: 1fr; gap: 1rem; }
 .post-body .gallery-stack img { aspect-ratio: auto; object-fit: contain; height: auto; border: 1px solid var(--line); }
+.post-body .note { background: var(--cream); border-left: 3px solid var(--rust); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: .92rem; }
+.post-body .note p { margin: .4rem 0; }
+.post-body .spotify iframe { border: 0; border-radius: 12px; display: block; }
 .post-body .video { position: relative; aspect-ratio: 16 / 9; margin: 1.5rem 0; }
 .post-body .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .post-body video { width: 100%; background: #000; }
