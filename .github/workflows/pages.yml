@@ -44,6 +44,14 @@ jobs:
             git push
           fi
 
+      # Give the stylesheet a new address on every publish so browsers
+      # never mix a cached old stylesheet with new pages.
+      - name: Version the stylesheet link
+        run: |
+          v="${GITHUB_SHA::8}"
+          find . -name '*.html' -not -path './.git/*' -print0 | xargs -0 sed -i -E "s#/assets/style\.css(\?v=[A-Za-z0-9]+)?\"#/assets/style.css?v=$v\"#g"
+          grep -c "style.css?v=$v" index.html
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
